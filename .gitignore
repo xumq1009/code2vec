@@ -1,2 +1,5 @@
 *.class
 *.lst
+.DS_Store
+*.pyc
+*.vscode
