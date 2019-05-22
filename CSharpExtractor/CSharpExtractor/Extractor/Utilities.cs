@@ -100,10 +100,16 @@ namespace Extractor
         private static Regex Whitespaces = new Regex(@"\s");
         private static Regex NonAlphabetic = new Regex("[^A-Za-z]");
 
-        public static String NormalizeName(string s)
+        public static String NormalizeName(string s, bool bTolower = true)
         {
-            String partiallyNormalized = s.ToLowerInvariant()
-                .Replace("\\\\n", String.Empty)
+            String partiallyNormalized = s;
+
+            if (bTolower)
+            {
+                partiallyNormalized = partiallyNormalized.ToLowerInvariant();
+            }
+
+            partiallyNormalized = partiallyNormalized.Replace("\\\\n", String.Empty)
                 .Replace("[\"',]", String.Empty);
 
             partiallyNormalized = Whitespaces.Replace(partiallyNormalized, "");

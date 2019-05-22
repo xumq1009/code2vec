@@ -162,6 +162,25 @@ namespace Extractor
 	        return name;
         }
 
+        private string NoSplitNameUnlessEmpty(string original)
+        {
+            String name = Utilities.NormalizeName(original, false);
+
+            if (String.IsNullOrWhiteSpace(name))
+            {
+                name = "SPACE";
+            }
+
+            if (String.IsNullOrEmpty(name))
+            {
+                name = "BLANK";
+            }
+            if (original == Extractor.MethodNameConst)
+            {
+                name = original;
+            }
+            return name;
+        }
 
 	    static readonly char[] removeFromComments = new char[] {' ', '/', '*', '{', '}'};
 
@@ -193,9 +212,9 @@ namespace Extractor
 
                 foreach (PathFinder.Path path in GetInternalPaths(methodTree))
                 {
-                    String pathString = SplitNameUnlessEmpty(tokenToVar[path.Left].Name)
+                    String pathString = NoSplitNameUnlessEmpty(tokenToVar[path.Left].Name)
                         + "," + MaybeHash(this.PathNodesToString(path))
-                        + "," + SplitNameUnlessEmpty(tokenToVar[path.Right].Name);
+                        + "," + NoSplitNameUnlessEmpty(tokenToVar[path.Right].Name);
 
                     Debug.WriteLine(path.Left.FullSpan+" "+tokenToVar[path.Left].Name+ "," +this.PathNodesToString(path)+ "," + tokenToVar[path.Right].Name+" "+path.Right.FullSpan);    
                     contexts.Add(pathString);
