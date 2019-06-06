@@ -19,7 +19,7 @@ class Config:
         config.WORDS_VOCAB_SIZE = 1301136
         config.TARGET_VOCAB_SIZE = 261245
         config.PATHS_VOCAB_SIZE = 911417
-        config.EMBEDDINGS_SIZE = 128
+        config.EMBEDDINGS_SIZE = 32
         config.MAX_TO_KEEP = 10
         # Automatically filled, do not edit:
         config.TRAIN_PATH = args.data_path
