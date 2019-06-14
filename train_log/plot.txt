@@ -1,19 +1,19 @@
-# bash train.sh 
-2019-06-09 19:13:23.327948: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2019-06-09 19:13:23.647779: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:964] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
-2019-06-09 19:13:23.648884: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1411] Found device 0 with properties: 
+(cv) [root@ellie-gpu code2vec]# bash train.sh 
+2019-06-14 10:23:03.021477: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-06-14 10:23:03.233500: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:964] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-06-14 10:23:03.234576: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1411] Found device 0 with properties: 
 name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
 pciBusID: 0000:00:08.0
 totalMemory: 15.90GiB freeMemory: 15.61GiB
-2019-06-09 19:13:23.648914: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1490] Adding visible gpu devices: 0
-2019-06-09 19:13:43.166601: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-06-09 19:13:43.166669: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977]      0 
-2019-06-09 19:13:43.166681: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990] 0:   N 
-2019-06-09 19:13:43.167108: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1103] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15121 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:00:08.0, compute capability: 6.0)
+2019-06-14 10:23:03.234606: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1490] Adding visible gpu devices: 0
+2019-06-14 10:23:08.507408: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-14 10:23:08.507476: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977]      0 
+2019-06-14 10:23:08.507487: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990] 0:   N 
+2019-06-14 10:23:08.507898: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1103] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15121 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:00:08.0, compute capability: 6.0)
 Dictionaries loaded.
-Loaded word vocab. size: 1087573
-Loaded target word vocab. size: 186705
-Loaded paths vocab. size: 451684
+Loaded word vocab. size: 1037257
+Loaded target word vocab. size: 195341
+Loaded paths vocab. size: 684532
 Created model
 Starting training
 WARNING:tensorflow:From /home/ellie/anaconda3/envs/cv/lib/python3.6/site-packages/tensorflow/python/training/input.py:187: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
@@ -27,121 +27,837 @@ WARNING:tensorflow:From /home/ellie/code2vec/PathContextReader.py:59: start_queu
 Instructions for updating:
 To construct input pipelines, use the `tf.data` module.
 Started reader...
-Average loss at batch 100: 0.011066, 	throughput: 877 samples/sec
-Number of waiting examples in queue: 256396
-Average loss at batch 200: 0.010350, 	throughput: 3819 samples/sec
-Number of waiting examples in queue: 257996
-Average loss at batch 300: 0.010113, 	throughput: 3699 samples/sec
-Number of waiting examples in queue: 258239
-Average loss at batch 400: 0.009885, 	throughput: 3769 samples/sec
-Number of waiting examples in queue: 259838
-Average loss at batch 500: 0.009688, 	throughput: 3791 samples/sec
-Number of waiting examples in queue: 256236
+Average loss at batch 100: 0.011379, 	throughput: 884 samples/sec
+Number of waiting examples in queue: 261598
+Average loss at batch 200: 0.010665, 	throughput: 3997 samples/sec
+Number of waiting examples in queue: 257998
+Average loss at batch 300: 0.010406, 	throughput: 3914 samples/sec
+Number of waiting examples in queue: 255826
+Average loss at batch 400: 0.010145, 	throughput: 3769 samples/sec
+Number of waiting examples in queue: 257425
 Saved after 1 epochs in: models/csharp/saved_model_iter1
 Loading test data from: data/csharp/csharp.val.c2v
 Done loading test data
 Done testing, epoch reached
-Evaluation time: 0H:0M:5S
-Accuracy after 1 epochs: [0.15982666 0.16008157 0.16339536 0.1646699  0.16619934]
-After 1 epochs: Precision: 0.14367562802996914, recall: 0.04272888131594469, F1: 0.065868565944335
-Average loss at batch 600: 0.009521, 	throughput: 2838 samples/sec
-Number of waiting examples in queue: 278635
-Average loss at batch 700: 0.009357, 	throughput: 4270 samples/sec
-Number of waiting examples in queue: 259435
-Average loss at batch 800: 0.009235, 	throughput: 3695 samples/sec
-Number of waiting examples in queue: 261034
-Average loss at batch 900: 0.009087, 	throughput: 3729 samples/sec
-Number of waiting examples in queue: 261277
-Average loss at batch 1000: 0.008882, 	throughput: 3793 samples/sec
-Number of waiting examples in queue: 257677
+Evaluation time: 0H:0M:30S
+Accuracy after 1 epochs: [0.02568448 0.03123941 0.03389448 0.03553271 0.03771702]
+After 1 epochs: Precision: 0.041389370042848025, recall: 0.023291498183412387, F1: 0.029808518766115937
+Average loss at batch 500: 0.009931, 	throughput: 1656 samples/sec
+Number of waiting examples in queue: 285024
+Average loss at batch 600: 0.009764, 	throughput: 5188 samples/sec
+Number of waiting examples in queue: 255424
+Average loss at batch 700: 0.009587, 	throughput: 3708 samples/sec
+Number of waiting examples in queue: 257024
+Average loss at batch 800: 0.009409, 	throughput: 3802 samples/sec
+Number of waiting examples in queue: 260052
+Average loss at batch 900: 0.009212, 	throughput: 3851 samples/sec
+Number of waiting examples in queue: 256451
 Saved after 2 epochs in: models/csharp/saved_model_iter2
 Loading test data from: data/csharp/csharp.val.c2v
 Done loading test data
 Done testing, epoch reached
-Evaluation time: 0H:0M:3S
-Accuracy after 2 epochs: [0.16008157 0.16339536 0.16390517 0.16416008 0.16416008]
-After 2 epochs: Precision: 0.14273069263111307, recall: 0.04227013565764467, F1: 0.06522398624734553
-Average loss at batch 1100: 0.008710, 	throughput: 2732 samples/sec
-Number of waiting examples in queue: 290474
-Average loss at batch 1200: 0.008541, 	throughput: 5292 samples/sec
-Number of waiting examples in queue: 255674
-Average loss at batch 1300: 0.008413, 	throughput: 3528 samples/sec
-Number of waiting examples in queue: 257274
-Average loss at batch 1400: 0.008263, 	throughput: 3650 samples/sec
-Number of waiting examples in queue: 257517
-Average loss at batch 1500: 0.008095, 	throughput: 3540 samples/sec
-Number of waiting examples in queue: 259116
-Average loss at batch 1600: 0.007926, 	throughput: 3705 samples/sec
-Number of waiting examples in queue: 260714
+Evaluation time: 0H:0M:35S
+Accuracy after 2 epochs: [0.03911046 0.04306481 0.04652958 0.05023914 0.05332731]
+After 2 epochs: Precision: 0.05450750744665762, recall: 0.025085561347719453, F1: 0.03435855515250601
+Average loss at batch 1000: 0.009020, 	throughput: 1596 samples/sec
+Number of waiting examples in queue: 278850
+Average loss at batch 1100: 0.008858, 	throughput: 4404 samples/sec
+Number of waiting examples in queue: 259650
+Average loss at batch 1200: 0.008714, 	throughput: 3702 samples/sec
+Number of waiting examples in queue: 257478
+Average loss at batch 1300: 0.008530, 	throughput: 3682 samples/sec
+Number of waiting examples in queue: 259078
+Average loss at batch 1400: 0.008340, 	throughput: 3720 samples/sec
+Number of waiting examples in queue: 255477
 Saved after 3 epochs in: models/csharp/saved_model_iter3
 Loading test data from: data/csharp/csharp.val.c2v
 Done loading test data
 Done testing, epoch reached
-Evaluation time: 0H:0M:3S
-Accuracy after 3 epochs: [0.16059138 0.16135611 0.16186592 0.16263064 0.16416008]
-After 3 epochs: Precision: 0.13645876935956466, recall: 0.04272888131594469, F1: 0.06507960273494036
-Average loss at batch 1700: 0.007769, 	throughput: 3211 samples/sec
-Number of waiting examples in queue: 267513
-Average loss at batch 1800: 0.007650, 	throughput: 4023 samples/sec
-Number of waiting examples in queue: 258713
-Average loss at batch 1900: 0.007515, 	throughput: 3638 samples/sec
-Number of waiting examples in queue: 255112
-Average loss at batch 2000: 0.007368, 	throughput: 3688 samples/sec
-Number of waiting examples in queue: 255355
-Average loss at batch 2100: 0.007220, 	throughput: 3595 samples/sec
-Number of waiting examples in queue: 256955
+Evaluation time: 0H:0M:30S
+Accuracy after 3 epochs: [0.0476594  0.05801604 0.06390992 0.06863631 0.07340037]
+After 3 epochs: Precision: 0.07352621685699982, recall: 0.036296489722833586, F1: 0.048600943422732676
+Average loss at batch 1500: 0.008189, 	throughput: 1772 samples/sec
+Number of waiting examples in queue: 272676
+Average loss at batch 1600: 0.008070, 	throughput: 4217 samples/sec
+Number of waiting examples in queue: 258676
+Average loss at batch 1700: 0.007912, 	throughput: 3730 samples/sec
+Number of waiting examples in queue: 256504
+Average loss at batch 1800: 0.007760, 	throughput: 3824 samples/sec
+Number of waiting examples in queue: 258104
+Average loss at batch 1900: 0.007600, 	throughput: 3693 samples/sec
+Number of waiting examples in queue: 259703
 Saved after 4 epochs in: models/csharp/saved_model_iter4
 Loading test data from: data/csharp/csharp.val.c2v
 Done loading test data
 Done testing, epoch reached
-Evaluation time: 0H:0M:3S
-Accuracy after 4 epochs: [0.16084629 0.16237573 0.16390517 0.16645424 0.16670915]
-After 4 epochs: Precision: 0.1306, recall: 0.042794416409987546, F1: 0.0644651759711733
-Average loss at batch 2200: 0.007092, 	throughput: 2746 samples/sec
-Number of waiting examples in queue: 284552
-Average loss at batch 2300: 0.006939, 	throughput: 4771 samples/sec
-Number of waiting examples in queue: 260152
-Average loss at batch 2400: 0.006831, 	throughput: 3866 samples/sec
-Number of waiting examples in queue: 256552
-Average loss at batch 2500: 0.006725, 	throughput: 3479 samples/sec
-Number of waiting examples in queue: 261995
-Average loss at batch 2600: 0.006589, 	throughput: 3684 samples/sec
-Number of waiting examples in queue: 258394
-Average loss at batch 2700: 0.006456, 	throughput: 3711 samples/sec
-Number of waiting examples in queue: 259992
+Evaluation time: 0H:0M:29S
+Accuracy after 4 epochs: [0.06044515 0.07046285 0.07859752 0.08449139 0.088973  ]
+After 4 epochs: Precision: 0.0898616285258116, recall: 0.04722944812732511, F1: 0.061916723199061253
+Average loss at batch 2000: 0.007468, 	throughput: 1894 samples/sec
+Number of waiting examples in queue: 261302
+Average loss at batch 2100: 0.007320, 	throughput: 3748 samples/sec
+Number of waiting examples in queue: 257702
+Average loss at batch 2200: 0.007179, 	throughput: 3845 samples/sec
+Number of waiting examples in queue: 255530
+Average loss at batch 2300: 0.007073, 	throughput: 3655 samples/sec
+Number of waiting examples in queue: 257129
 Saved after 5 epochs in: models/csharp/saved_model_iter5
 Loading test data from: data/csharp/csharp.val.c2v
 Done loading test data
 Done testing, epoch reached
-Evaluation time: 0H:0M:3S
-Accuracy after 5 epochs: [0.16543462 0.1684935  0.17002294 0.1723171  0.17665052]
-After 5 epochs: Precision: 0.17255050028317917, recall: 0.06004861704224427, F1: 0.08909250414270398
-Average loss at batch 2800: 0.006368, 	throughput: 3308 samples/sec
-Number of waiting examples in queue: 261591
-Average loss at batch 2900: 0.006268, 	throughput: 3744 samples/sec
-Number of waiting examples in queue: 257991
-Average loss at batch 3000: 0.006154, 	throughput: 3715 samples/sec
-Number of waiting examples in queue: 259590
-Average loss at batch 3100: 0.006043, 	throughput: 3655 samples/sec
-Number of waiting examples in queue: 259833
-Average loss at batch 3200: 0.005956, 	throughput: 3722 samples/sec
-Number of waiting examples in queue: 256232
+Evaluation time: 0H:0M:30S
+Accuracy after 5 epochs: [0.06933303 0.08102663 0.08929311 0.09663691 0.10296388]
+After 5 epochs: Precision: 0.1015484936167374, recall: 0.056785541090013804, F1: 0.072839502480718
+Average loss at batch 2400: 0.006919, 	throughput: 1593 samples/sec
+Number of waiting examples in queue: 295128
+Average loss at batch 2500: 0.006801, 	throughput: 5264 samples/sec
+Number of waiting examples in queue: 255128
+Average loss at batch 2600: 0.006690, 	throughput: 3538 samples/sec
+Number of waiting examples in queue: 261928
+Average loss at batch 2700: 0.006545, 	throughput: 3775 samples/sec
+Number of waiting examples in queue: 259756
+Average loss at batch 2800: 0.006463, 	throughput: 3782 samples/sec
+Number of waiting examples in queue: 256155
 Saved after 6 epochs in: models/csharp/saved_model_iter6
 Loading test data from: data/csharp/csharp.val.c2v
 Done loading test data
 Done testing, epoch reached
-Evaluation time: 0H:0M:4S
-Accuracy after 6 epochs: [0.16696406 0.16823859 0.17486617 0.17690543 0.19067041]
-After 6 epochs: Precision: 0.18528610354223432, recall: 0.06702589039295571, F1: 0.09844134536505332
-Average loss at batch 3300: 0.005839, 	throughput: 2768 samples/sec
-Number of waiting examples in queue: 283830
-Average loss at batch 3400: 0.005756, 	throughput: 4639 samples/sec
-Number of waiting examples in queue: 259430
-Average loss at batch 3500: 0.005683, 	throughput: 3697 samples/sec
-Number of waiting examples in queue: 255830
-Average loss at batch 3600: 0.005565, 	throughput: 3631 samples/sec
-Number of waiting examples in queue: 256073
-Average loss at batch 3700: 0.005483, 	throughput: 3606 samples/sec
-Number of waiting examples in queue: 257672
-Average loss at batch 3800: 0.005433, 	throughput: 3546 samples/sec
-Number of waiting examples in queue: 259270
+Evaluation time: 0H:0M:35S
+Accuracy after 6 epochs: [0.07733589 0.09417015 0.10416902 0.11294392 0.11932738]
+After 6 epochs: Precision: 0.10624161502587363, recall: 0.062040953371355026, F1: 0.07833646879406941
+Average loss at batch 2900: 0.006339, 	throughput: 1533 samples/sec
+Number of waiting examples in queue: 283754
+Average loss at batch 3000: 0.006236, 	throughput: 4616 samples/sec
+Number of waiting examples in queue: 259354
+Average loss at batch 3100: 0.006142, 	throughput: 3731 samples/sec
+Number of waiting examples in queue: 257182
+Average loss at batch 3200: 0.006031, 	throughput: 3551 samples/sec
+Number of waiting examples in queue: 258782
+Average loss at batch 3300: 0.005913, 	throughput: 3866 samples/sec
+Number of waiting examples in queue: 255181
+Saved after 7 epochs in: models/csharp/saved_model_iter7
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:28S
+Accuracy after 7 epochs: [0.08933077 0.10993108 0.12284864 0.13282868 0.14007833]
+After 7 epochs: Precision: 0.12743969730411478, recall: 0.07536044077956826, F1: 0.094713069255307
+Average loss at batch 3400: 0.005809, 	throughput: 1791 samples/sec
+Number of waiting examples in queue: 272380
+Average loss at batch 3500: 0.005745, 	throughput: 4300 samples/sec
+Number of waiting examples in queue: 258380
+Average loss at batch 3600: 0.005664, 	throughput: 3832 samples/sec
+Number of waiting examples in queue: 256208
+Average loss at batch 3700: 0.005538, 	throughput: 3604 samples/sec
+Number of waiting examples in queue: 257808
+Average loss at batch 3800: 0.005451, 	throughput: 3816 samples/sec
+Number of waiting examples in queue: 259407
+Saved after 8 epochs in: models/csharp/saved_model_iter8
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 8 epochs: [0.0985576  0.12292396 0.13616164 0.14713968 0.15565096]
+After 8 epochs: Precision: 0.1495712375108174, recall: 0.08863527228819051, F1: 0.1113091944837196
+Average loss at batch 3900: 0.005362, 	throughput: 1898 samples/sec
+Number of waiting examples in queue: 261006
+Average loss at batch 4000: 0.005292, 	throughput: 3891 samples/sec
+Number of waiting examples in queue: 257406
+Average loss at batch 4100: 0.005215, 	throughput: 3736 samples/sec
+Number of waiting examples in queue: 255234
+Average loss at batch 4200: 0.005110, 	throughput: 3606 samples/sec
+Number of waiting examples in queue: 256834
+Average loss at batch 4300: 0.005039, 	throughput: 3712 samples/sec
+Number of waiting examples in queue: 258433
+Saved after 9 epochs in: models/csharp/saved_model_iter9
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:30S
+Accuracy after 9 epochs: [0.11051482 0.13798817 0.15290174 0.16519791 0.17346439]
+After 9 epochs: Precision: 0.165557581282285, recall: 0.10166060266815935, F1: 0.1259695971331137
+Average loss at batch 4400: 0.004967, 	throughput: 1900 samples/sec
+Number of waiting examples in queue: 260032
+Average loss at batch 4500: 0.004907, 	throughput: 3843 samples/sec
+Number of waiting examples in queue: 256432
+Average loss at batch 4600: 0.004823, 	throughput: 3712 samples/sec
+Number of waiting examples in queue: 259460
+Average loss at batch 4700: 0.004751, 	throughput: 3852 samples/sec
+Number of waiting examples in queue: 255859
+Saved after 10 epochs in: models/csharp/saved_model_iter10
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 10 epochs: [0.12166234 0.15260046 0.16883215 0.18193801 0.19105186]
+After 10 epochs: Precision: 0.1733385804965857, recall: 0.11091525486959239, F1: 0.13527270659159416
+Average loss at batch 4800: 0.004671, 	throughput: 1700 samples/sec
+Number of waiting examples in queue: 288658
+Average loss at batch 4900: 0.004596, 	throughput: 5216 samples/sec
+Number of waiting examples in queue: 259058
+Average loss at batch 5000: 0.004560, 	throughput: 3635 samples/sec
+Number of waiting examples in queue: 260658
+Average loss at batch 5100: 0.004472, 	throughput: 3791 samples/sec
+Number of waiting examples in queue: 258486
+Average loss at batch 5200: 0.004396, 	throughput: 3775 samples/sec
+Number of waiting examples in queue: 260085
+Saved after 11 epochs in: models/csharp/saved_model_iter11
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 11 epochs: [0.13134109 0.16612059 0.18357624 0.19847098 0.20909125]
+After 11 epochs: Precision: 0.182282569519532, recall: 0.12256720480220723, F1: 0.14657622811026522
+Average loss at batch 5300: 0.004323, 	throughput: 1778 samples/sec
+Number of waiting examples in queue: 277284
+Average loss at batch 5400: 0.004306, 	throughput: 4587 samples/sec
+Number of waiting examples in queue: 258084
+Average loss at batch 5500: 0.004235, 	throughput: 3753 samples/sec
+Number of waiting examples in queue: 261112
+Average loss at batch 5600: 0.004148, 	throughput: 3717 samples/sec
+Number of waiting examples in queue: 257512
+Average loss at batch 5700: 0.004104, 	throughput: 3783 samples/sec
+Number of waiting examples in queue: 259111
+Saved after 12 epochs in: models/csharp/saved_model_iter12
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 12 epochs: [0.13909916 0.1756487  0.19575942 0.21039054 0.22151923]
+After 12 epochs: Precision: 0.1985881799828535, recall: 0.13390551137052334, F1: 0.15995522612477656
+Average loss at batch 5800: 0.004033, 	throughput: 1801 samples/sec
+Number of waiting examples in queue: 271110
+Average loss at batch 5900: 0.004012, 	throughput: 4266 samples/sec
+Number of waiting examples in queue: 257110
+Average loss at batch 6000: 0.003942, 	throughput: 3707 samples/sec
+Number of waiting examples in queue: 260138
+Average loss at batch 6100: 0.003892, 	throughput: 3908 samples/sec
+Number of waiting examples in queue: 256538
+Average loss at batch 6200: 0.003828, 	throughput: 3859 samples/sec
+Number of waiting examples in queue: 258137
+Saved after 13 epochs in: models/csharp/saved_model_iter13
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 13 epochs: [0.1476481  0.18530863 0.20573946 0.222875   0.23404135]
+After 13 epochs: Precision: 0.20752195360878845, recall: 0.1382915228947123, F1: 0.1659769150052466
+Average loss at batch 6300: 0.003759, 	throughput: 1876 samples/sec
+Number of waiting examples in queue: 259736
+Average loss at batch 6400: 0.003731, 	throughput: 3841 samples/sec
+Number of waiting examples in queue: 256136
+Average loss at batch 6500: 0.003688, 	throughput: 3717 samples/sec
+Number of waiting examples in queue: 259164
+Average loss at batch 6600: 0.003627, 	throughput: 3919 samples/sec
+Number of waiting examples in queue: 255564
+Saved after 14 epochs in: models/csharp/saved_model_iter14
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 14 epochs: [0.15476594 0.19333032 0.21649155 0.23221482 0.24571611]
+After 14 epochs: Precision: 0.21797953198040979, recall: 0.14592184607061742, F1: 0.17481646199059125
+Average loss at batch 6700: 0.003552, 	throughput: 1591 samples/sec
+Number of waiting examples in queue: 298762
+Average loss at batch 6800: 0.003529, 	throughput: 5432 samples/sec
+Number of waiting examples in queue: 258762
+Average loss at batch 6900: 0.003500, 	throughput: 3679 samples/sec
+Number of waiting examples in queue: 260362
+Average loss at batch 7000: 0.003456, 	throughput: 3842 samples/sec
+Number of waiting examples in queue: 258190
+Average loss at batch 7100: 0.003397, 	throughput: 3698 samples/sec
+Number of waiting examples in queue: 259789
+Saved after 15 epochs in: models/csharp/saved_model_iter15
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:27S
+Accuracy after 15 epochs: [0.16702444 0.20986329 0.23330697 0.25036719 0.26405679]
+After 15 epochs: Precision: 0.2337821885466425, recall: 0.15881593241359374, F1: 0.18914169107541956
+Average loss at batch 7200: 0.003333, 	throughput: 1793 samples/sec
+Number of waiting examples in queue: 287388
+Average loss at batch 7300: 0.003311, 	throughput: 5170 samples/sec
+Number of waiting examples in queue: 257788
+Average loss at batch 7400: 0.003277, 	throughput: 3752 samples/sec
+Number of waiting examples in queue: 259388
+Average loss at batch 7500: 0.003246, 	throughput: 3848 samples/sec
+Number of waiting examples in queue: 257216
+Average loss at batch 7600: 0.003175, 	throughput: 3785 samples/sec
+Number of waiting examples in queue: 258815
+Saved after 16 epochs in: models/csharp/saved_model_iter16
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:27S
+Accuracy after 16 epochs: [0.1693029  0.21202877 0.2358114  0.25445336 0.26827477]
+After 16 epochs: Precision: 0.24437113576096053, recall: 0.1619771827663215, F1: 0.19482077968686914
+Average loss at batch 7700: 0.003129, 	throughput: 1865 samples/sec
+Number of waiting examples in queue: 276014
+Average loss at batch 7800: 0.003107, 	throughput: 4514 samples/sec
+Number of waiting examples in queue: 256814
+Average loss at batch 7900: 0.003078, 	throughput: 3678 samples/sec
+Number of waiting examples in queue: 259842
+Average loss at batch 8000: 0.003042, 	throughput: 3914 samples/sec
+Number of waiting examples in queue: 256242
+Average loss at batch 8100: 0.003000, 	throughput: 3781 samples/sec
+Number of waiting examples in queue: 257841
+Saved after 17 epochs in: models/csharp/saved_model_iter17
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 17 epochs: [0.18190035 0.22709298 0.25228788 0.27010131 0.28243513]
+After 17 epochs: Precision: 0.2533068649097575, recall: 0.17491386022743696, F1: 0.2069347836879237
+Average loss at batch 8200: 0.002954, 	throughput: 1870 samples/sec
+Number of waiting examples in queue: 264640
+Average loss at batch 8300: 0.002929, 	throughput: 4148 samples/sec
+Number of waiting examples in queue: 255840
+Average loss at batch 8400: 0.002894, 	throughput: 3717 samples/sec
+Number of waiting examples in queue: 258868
+Average loss at batch 8500: 0.002872, 	throughput: 3800 samples/sec
+Number of waiting examples in queue: 260468
+Average loss at batch 8600: 0.002828, 	throughput: 3886 samples/sec
+Number of waiting examples in queue: 256867
+Saved after 18 epochs in: models/csharp/saved_model_iter18
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 18 epochs: [0.19308553 0.24006704 0.26688133 0.28477008 0.29851618]
+After 18 epochs: Precision: 0.2597791757274516, recall: 0.18719016550932943, F1: 0.21759034642395395
+Average loss at batch 8700: 0.002790, 	throughput: 1940 samples/sec
+Number of waiting examples in queue: 258466
+Average loss at batch 8800: 0.002768, 	throughput: 3830 samples/sec
+Number of waiting examples in queue: 260066
+Average loss at batch 8900: 0.002731, 	throughput: 3839 samples/sec
+Number of waiting examples in queue: 257894
+Average loss at batch 9000: 0.002700, 	throughput: 3865 samples/sec
+Number of waiting examples in queue: 259493
+Saved after 19 epochs in: models/csharp/saved_model_iter19
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:33S
+Accuracy after 19 epochs: [0.20193575 0.25245735 0.28040146 0.29891161 0.31316612]
+After 19 epochs: Precision: 0.2713270066767231, recall: 0.1988645375579627, F1: 0.22951208022074165
+Average loss at batch 9100: 0.002661, 	throughput: 1596 samples/sec
+Number of waiting examples in queue: 287092
+Average loss at batch 9200: 0.002637, 	throughput: 5149 samples/sec
+Number of waiting examples in queue: 257492
+Average loss at batch 9300: 0.002632, 	throughput: 3774 samples/sec
+Number of waiting examples in queue: 259092
+Average loss at batch 9400: 0.002598, 	throughput: 3767 samples/sec
+Number of waiting examples in queue: 256920
+Average loss at batch 9500: 0.002542, 	throughput: 3877 samples/sec
+Number of waiting examples in queue: 258519
+Saved after 20 epochs in: models/csharp/saved_model_iter20
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:27S
+Accuracy after 20 epochs: [0.20508041 0.2550371  0.28320717 0.30337438 0.31777954]
+After 20 epochs: Precision: 0.2830887656215167, recall: 0.20125296577184648, F1: 0.23525725728452915
+Average loss at batch 9600: 0.002524, 	throughput: 1818 samples/sec
+Number of waiting examples in queue: 275718
+Average loss at batch 9700: 0.002509, 	throughput: 4652 samples/sec
+Number of waiting examples in queue: 256518
+Average loss at batch 9800: 0.002496, 	throughput: 3862 samples/sec
+Number of waiting examples in queue: 259546
+Average loss at batch 9900: 0.002453, 	throughput: 3962 samples/sec
+Number of waiting examples in queue: 255946
+Average loss at batch 10000: 0.002433, 	throughput: 3813 samples/sec
+Number of waiting examples in queue: 257545
+Saved after 21 epochs in: models/csharp/saved_model_iter21
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:27S
+Accuracy after 21 epochs: [0.21475916 0.2666742  0.2948631  0.31457839 0.33075359]
+After 21 epochs: Precision: 0.29570908901260806, recall: 0.21154841688469772, F1: 0.24664707337696057
+Average loss at batch 10100: 0.002391, 	throughput: 1851 samples/sec
+Number of waiting examples in queue: 269544
+Average loss at batch 10200: 0.002389, 	throughput: 4350 samples/sec
+Number of waiting examples in queue: 255544
+Average loss at batch 10300: 0.002369, 	throughput: 3678 samples/sec
+Number of waiting examples in queue: 258572
+Average loss at batch 10400: 0.002335, 	throughput: 3728 samples/sec
+Number of waiting examples in queue: 260172
+Average loss at batch 10500: 0.002309, 	throughput: 3877 samples/sec
+Number of waiting examples in queue: 256571
+Saved after 22 epochs in: models/csharp/saved_model_iter22
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 22 epochs: [0.2173954  0.26838775 0.29667081 0.31817497 0.3341807 ]
+After 22 epochs: Precision: 0.295567099015265, recall: 0.21615889471034624, F1: 0.24970182566157015
+Average loss at batch 10600: 0.002278, 	throughput: 1805 samples/sec
+Number of waiting examples in queue: 263370
+Average loss at batch 10700: 0.002276, 	throughput: 4038 samples/sec
+Number of waiting examples in queue: 259770
+Average loss at batch 10800: 0.002261, 	throughput: 3818 samples/sec
+Number of waiting examples in queue: 257598
+Average loss at batch 10900: 0.002210, 	throughput: 3717 samples/sec
+Number of waiting examples in queue: 259198
+Saved after 23 epochs in: models/csharp/saved_model_iter23
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 23 epochs: [0.22247957 0.27448876 0.30292246 0.3237299  0.33911422]
+After 23 epochs: Precision: 0.3032028012464262, recall: 0.22006780356551625, F1: 0.25503123581418474
+Average loss at batch 11000: 0.002208, 	throughput: 1660 samples/sec
+Number of waiting examples in queue: 300000
+Average loss at batch 11100: 0.002188, 	throughput: 5516 samples/sec
+Number of waiting examples in queue: 262396
+Average loss at batch 11200: 0.002172, 	throughput: 3903 samples/sec
+Number of waiting examples in queue: 258796
+Average loss at batch 11300: 0.002153, 	throughput: 3790 samples/sec
+Number of waiting examples in queue: 256624
+Average loss at batch 11400: 0.002124, 	throughput: 3732 samples/sec
+Number of waiting examples in queue: 258223
+Saved after 24 epochs in: models/csharp/saved_model_iter24
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:32S
+Accuracy after 24 epochs: [0.22878771 0.2811735  0.3094189  0.32881407 0.3447633 ]
+After 24 epochs: Precision: 0.3062622678544466, recall: 0.22704948998866642, F1: 0.2607731432749713
+Average loss at batch 11500: 0.002106, 	throughput: 1637 samples/sec
+Number of waiting examples in queue: 285822
+Average loss at batch 11600: 0.002097, 	throughput: 5166 samples/sec
+Number of waiting examples in queue: 256222
+Average loss at batch 11700: 0.002073, 	throughput: 3749 samples/sec
+Number of waiting examples in queue: 257822
+Average loss at batch 11800: 0.002058, 	throughput: 3887 samples/sec
+Number of waiting examples in queue: 255650
+Average loss at batch 11900: 0.002043, 	throughput: 3979 samples/sec
+Number of waiting examples in queue: 257249
+Saved after 25 epochs in: models/csharp/saved_model_iter25
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:31S
+Accuracy after 25 epochs: [0.23496403 0.29026852 0.31966256 0.34111023 0.35649456]
+After 25 epochs: Precision: 0.3152587245786789, recall: 0.2352220420789773, F1: 0.2694219506663643
+Average loss at batch 12000: 0.002017, 	throughput: 1721 samples/sec
+Number of waiting examples in queue: 279648
+Average loss at batch 12100: 0.002000, 	throughput: 4533 samples/sec
+Number of waiting examples in queue: 255248
+Average loss at batch 12200: 0.002000, 	throughput: 3719 samples/sec
+Number of waiting examples in queue: 258276
+Average loss at batch 12300: 0.001971, 	throughput: 3824 samples/sec
+Number of waiting examples in queue: 259876
+Average loss at batch 12400: 0.001945, 	throughput: 3895 samples/sec
+Number of waiting examples in queue: 256275
+Saved after 26 epochs in: models/csharp/saved_model_iter26
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:28S
+Accuracy after 26 epochs: [0.23422965 0.28936467 0.31866456 0.33996159 0.35636275]
+After 26 epochs: Precision: 0.3208952336737852, recall: 0.23205942422292478, F1: 0.2693412998652401
+Average loss at batch 12500: 0.001939, 	throughput: 1905 samples/sec
+Number of waiting examples in queue: 263074
+Average loss at batch 12600: 0.001928, 	throughput: 3946 samples/sec
+Number of waiting examples in queue: 259474
+Average loss at batch 12700: 0.001922, 	throughput: 3897 samples/sec
+Number of waiting examples in queue: 257302
+Average loss at batch 12800: 0.001891, 	throughput: 3828 samples/sec
+Number of waiting examples in queue: 258902
+Average loss at batch 12900: 0.001869, 	throughput: 3993 samples/sec
+Number of waiting examples in queue: 255301
+Saved after 27 epochs in: models/csharp/saved_model_iter27
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:25S
+Accuracy after 27 epochs: [0.23665876 0.29183143 0.32066057 0.34169397 0.35743607]
+After 27 epochs: Precision: 0.315813389881854, recall: 0.23335089838230563, F1: 0.26839086162370035
+Average loss at batch 13000: 0.001865, 	throughput: 1932 samples/sec
+Number of waiting examples in queue: 262100
+Average loss at batch 13100: 0.001862, 	throughput: 3884 samples/sec
+Number of waiting examples in queue: 258500
+Average loss at batch 13200: 0.001837, 	throughput: 3915 samples/sec
+Number of waiting examples in queue: 256328
+
+Average loss at batch 13300: 0.001820, 	throughput: 3858 samples/sec
+Number of waiting examples in queue: 257928
+Saved after 28 epochs in: models/csharp/saved_model_iter28
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:28S
+Accuracy after 28 epochs: [0.2480699  0.30516326 0.33557413 0.35570369 0.37244379]
+After 28 epochs: Precision: 0.331690291960668, recall: 0.24514194023863498, F1: 0.28192322547420823
+Average loss at batch 13400: 0.001808, 	throughput: 1759 samples/sec
+Number of waiting examples in queue: 290726
+Average loss at batch 13500: 0.001794, 	throughput: 5585 samples/sec
+Number of waiting examples in queue: 255926
+Average loss at batch 13600: 0.001797, 	throughput: 3932 samples/sec
+Number of waiting examples in queue: 257526
+Average loss at batch 13700: 0.001771, 	throughput: 3967 samples/sec
+Number of waiting examples in queue: 255354
+Average loss at batch 13800: 0.001756, 	throughput: 3931 samples/sec
+Number of waiting examples in queue: 256953
+Saved after 29 epochs in: models/csharp/saved_model_iter29
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:26S
+Accuracy after 29 epochs: [0.25290928 0.30945656 0.34001808 0.35973336 0.3754378 ]
+After 29 epochs: Precision: 0.3406057740837044, recall: 0.24868344333792008, F1: 0.2874751962729704
+Average loss at batch 13900: 0.001738, 	throughput: 1838 samples/sec
+Number of waiting examples in queue: 279352
+Average loss at batch 14000: 0.001741, 	throughput: 4691 samples/sec
+Number of waiting examples in queue: 260152
+Average loss at batch 14100: 0.001724, 	throughput: 3972 samples/sec
+Number of waiting examples in queue: 256552
+Average loss at batch 14200: 0.001710, 	throughput: 3858 samples/sec
+Number of waiting examples in queue: 259580
+Average loss at batch 14300: 0.001694, 	throughput: 3804 samples/sec
+Number of waiting examples in queue: 255979
+Saved after 30 epochs in: models/csharp/saved_model_iter30
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 30 epochs: [0.258709   0.31830678 0.3494897  0.3707679  0.3871314 ]
+After 30 epochs: Precision: 0.34753634132527844, recall: 0.25760183591508895, F1: 0.2958861395289031
+Average loss at batch 14400: 0.001677, 	throughput: 1842 samples/sec
+Number of waiting examples in queue: 267978
+Average loss at batch 14500: 0.001680, 	throughput: 4126 samples/sec
+Number of waiting examples in queue: 259178
+Average loss at batch 14600: 0.001673, 	throughput: 3911 samples/sec
+Number of waiting examples in queue: 257006
+Average loss at batch 14700: 0.001650, 	throughput: 3877 samples/sec
+Number of waiting examples in queue: 258606
+Average loss at batch 14800: 0.001640, 	throughput: 3911 samples/sec
+Number of waiting examples in queue: 255005
+Saved after 31 epochs in: models/csharp/saved_model_iter31
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:30S
+Accuracy after 31 epochs: [0.25863368 0.31708282 0.34781381 0.36792453 0.38432569]
+After 31 epochs: Precision: 0.34604932249665843, recall: 0.25478654683003504, F1: 0.2934868452863843
+Average loss at batch 14900: 0.001624, 	throughput: 1896 samples/sec
+Number of waiting examples in queue: 256604
+Average loss at batch 15000: 0.001619, 	throughput: 3732 samples/sec
+Number of waiting examples in queue: 258204
+Average loss at batch 15100: 0.001606, 	throughput: 3721 samples/sec
+Number of waiting examples in queue: 256032
+Average loss at batch 15200: 0.001595, 	throughput: 3741 samples/sec
+Number of waiting examples in queue: 257632
+Saved after 32 epochs in: models/csharp/saved_model_iter32
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:30S
+Accuracy after 32 epochs: [0.26684367 0.32772191 0.35856589 0.37982526 0.39600045]
+After 32 epochs: Precision: 0.3524785643567439, recall: 0.2640411965277745, F1: 0.30191688178695625
+Average loss at batch 15300: 0.001588, 	throughput: 1575 samples/sec
+Number of waiting examples in queue: 300000
+Average loss at batch 15400: 0.001576, 	throughput: 6312 samples/sec
+Number of waiting examples in queue: 255630
+Average loss at batch 15500: 0.001562, 	throughput: 3909 samples/sec
+Number of waiting examples in queue: 257230
+Average loss at batch 15600: 0.001567, 	throughput: 3814 samples/sec
+Number of waiting examples in queue: 255058
+Average loss at batch 15700: 0.001542, 	throughput: 3886 samples/sec
+Number of waiting examples in queue: 256658
+Saved after 33 epochs in: models/csharp/saved_model_iter33
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:27S
+Accuracy after 33 epochs: [0.26795466 0.32625315 0.35803864 0.37974993 0.39394795]
+After 33 epochs: Precision: 0.35480991551111746, recall: 0.26695800608174913, F1: 0.30467749876907924
+Average loss at batch 15800: 0.001524, 	throughput: 1756 samples/sec
+Number of waiting examples in queue: 289456
+Average loss at batch 15900: 0.001535, 	throughput: 5163 samples/sec
+Number of waiting examples in queue: 259856
+Average loss at batch 16000: 0.001534, 	throughput: 3951 samples/sec
+Number of waiting examples in queue: 256256
+Average loss at batch 16100: 0.001504, 	throughput: 3778 samples/sec
+Number of waiting examples in queue: 259284
+Average loss at batch 16200: 0.001498, 	throughput: 3906 samples/sec
+Number of waiting examples in queue: 255683
+Saved after 34 epochs in: models/csharp/saved_model_iter34
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 34 epochs: [0.2746394  0.33435017 0.36643694 0.38835536 0.40502015]
+After 34 epochs: Precision: 0.3638051557610373, recall: 0.2760908514053227, F1: 0.31393624612380994
+Average loss at batch 16300: 0.001476, 	throughput: 1755 samples/sec
+Number of waiting examples in queue: 278082
+Average loss at batch 16400: 0.001490, 	throughput: 4546 samples/sec
+Number of waiting examples in queue: 258882
+Average loss at batch 16500: 0.001469, 	throughput: 3935 samples/sec
+Number of waiting examples in queue: 255282
+Average loss at batch 16600: 0.001464, 	throughput: 3818 samples/sec
+Number of waiting examples in queue: 258310
+Average loss at batch 16700: 0.001449, 	throughput: 3766 samples/sec
+Number of waiting examples in queue: 259909
+Saved after 35 epochs in: models/csharp/saved_model_iter35
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:30S
+Accuracy after 35 epochs: [0.27612699 0.33747599 0.37071141 0.39215908 0.40750574]
+After 35 epochs: Precision: 0.36885143257864156, recall: 0.2748001156856708, F1: 0.31495431531786805
+Average loss at batch 16800: 0.001442, 	throughput: 1834 samples/sec
+Number of waiting examples in queue: 266708
+Average loss at batch 16900: 0.001430, 	throughput: 4359 samples/sec
+Number of waiting examples in queue: 257908
+Average loss at batch 17000: 0.001431, 	throughput: 3771 samples/sec
+Number of waiting examples in queue: 260936
+Average loss at batch 17100: 0.001420, 	throughput: 3880 samples/sec
+Number of waiting examples in queue: 257336
+Average loss at batch 17200: 0.001409, 	throughput: 3852 samples/sec
+Number of waiting examples in queue: 258935
+Saved after 36 epochs in: models/csharp/saved_model_iter36
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:27S
+Accuracy after 36 epochs: [0.29094641 0.35244605 0.38615222 0.40812714 0.42486725]
+After 36 epochs: Precision: 0.38250149815940415, recall: 0.29176461808276427, F1: 0.33102776734069633
+Average loss at batch 17300: 0.001408, 	throughput: 2046 samples/sec
+Number of waiting examples in queue: 255334
+Average loss at batch 17400: 0.001392, 	throughput: 3760 samples/sec
+Number of waiting examples in queue: 256934
+Average loss at batch 17500: 0.001385, 	throughput: 3843 samples/sec
+Number of waiting examples in queue: 259962
+Average loss at batch 17600: 0.001380, 	throughput: 3988 samples/sec
+Number of waiting examples in queue: 256362
+Saved after 37 epochs in: models/csharp/saved_model_iter37
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:27S
+Accuracy after 37 epochs: [0.28866795 0.3507325  0.38477761 0.40662072 0.4220992 ]
+After 37 epochs: Precision: 0.3802586005004376, recall: 0.2877852198735051, F1: 0.327621636833805
+Average loss at batch 17700: 0.001366, 	throughput: 1762 samples/sec
+Number of waiting examples in queue: 294360
+Average loss at batch 17800: 0.001361, 	throughput: 5455 samples/sec
+Number of waiting examples in queue: 259560
+Average loss at batch 17900: 0.001363, 	throughput: 3919 samples/sec
+Number of waiting examples in queue: 255960
+Average loss at batch 18000: 0.001355, 	throughput: 3763 samples/sec
+Number of waiting examples in queue: 258988
+Average loss at batch 18100: 0.001336, 	throughput: 3902 samples/sec
+Number of waiting examples in queue: 255387
+Saved after 38 epochs in: models/csharp/saved_model_iter38
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:28S
+Accuracy after 38 epochs: [0.28953414 0.35137273 0.38547433 0.40739276 0.42260761]
+After 38 epochs: Precision: 0.3820286896585648, recall: 0.2896178174716008, F1: 0.32946591439358586
+Average loss at batch 18200: 0.001329, 	throughput: 1776 samples/sec
+Number of waiting examples in queue: 282986
+Average loss at batch 18300: 0.001316, 	throughput: 4833 samples/sec
+Number of waiting examples in queue: 258586
+Average loss at batch 18400: 0.001324, 	throughput: 3881 samples/sec
+Number of waiting examples in queue: 260186
+Average loss at batch 18500: 0.001318, 	throughput: 3851 samples/sec
+Number of waiting examples in queue: 258014
+Average loss at batch 18600: 0.001305, 	throughput: 3860 samples/sec
+Number of waiting examples in queue: 259613
+Saved after 39 epochs in: models/csharp/saved_model_iter39
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 39 epochs: [0.28625767 0.34739954 0.38172711 0.40219561 0.41893571]
+After 39 epochs: Precision: 0.3779826763822982, recall: 0.2871004592824004, F1: 0.32633213555082097
+Average loss at batch 18700: 0.001290, 	throughput: 1838 samples/sec
+Number of waiting examples in queue: 271612
+Average loss at batch 18800: 0.001288, 	throughput: 4240 samples/sec
+Number of waiting examples in queue: 257612
+Average loss at batch 18900: 0.001278, 	throughput: 3994 samples/sec
+Number of waiting examples in queue: 255440
+Average loss at batch 19000: 0.001280, 	throughput: 3695 samples/sec
+Number of waiting examples in queue: 257040
+Average loss at batch 19100: 0.001265, 	throughput: 3776 samples/sec
+Number of waiting examples in queue: 258639
+Saved after 40 epochs in: models/csharp/saved_model_iter40
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:28S
+Accuracy after 40 epochs: [0.28706737 0.35037472 0.38298874 0.40552857 0.42168493]
+After 40 epochs: Precision: 0.38507231564929234, recall: 0.28997891673041404, F1: 0.3308277878738695
+Average loss at batch 19200: 0.001264, 	throughput: 1868 samples/sec
+Number of waiting examples in queue: 265438
+Average loss at batch 19300: 0.001263, 	throughput: 4148 samples/sec
+Number of waiting examples in queue: 256638
+Average loss at batch 19400: 0.001245, 	throughput: 3687 samples/sec
+Number of waiting examples in queue: 259666
+Average loss at batch 19500: 0.001251, 	throughput: 3923 samples/sec
+Number of waiting examples in queue: 256066
+Saved after 41 epochs in: models/csharp/saved_model_iter41
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:27S
+Accuracy after 41 epochs: [0.29316838 0.35681467 0.39055851 0.41200618 0.42748465]
+After 41 epochs: Precision: 0.3901202033637053, recall: 0.29277894648462827, F1: 0.3345120056704176
+Average loss at batch 19600: 0.001221, 	throughput: 1656 samples/sec
+Number of waiting examples in queue: 300000
+Average loss at batch 19700: 0.001230, 	throughput: 5975 samples/sec
+Number of waiting examples in queue: 259264
+Average loss at batch 19800: 0.001221, 	throughput: 3832 samples/sec
+Number of waiting examples in queue: 255664
+Average loss at batch 19900: 0.001213, 	throughput: 3782 samples/sec
+Number of waiting examples in queue: 258692
+Average loss at batch 20000: 0.001208, 	throughput: 3831 samples/sec
+Number of waiting examples in queue: 255092
+Saved after 42 epochs in: models/csharp/saved_model_iter42
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 42 epochs: [0.29576696 0.357888   0.39168832 0.41343728 0.42946183]
+After 42 epochs: Precision: 0.3900004883170154, recall: 0.2980501002938844, F1: 0.3378812156595222
+Average loss at batch 20100: 0.001203, 	throughput: 1694 samples/sec
+Number of waiting examples in queue: 287890
+Average loss at batch 20200: 0.001189, 	throughput: 5074 samples/sec
+Number of waiting examples in queue: 258290
+Average loss at batch 20300: 0.001195, 	throughput: 3730 samples/sec
+Number of waiting examples in queue: 259890
+Average loss at batch 20400: 0.001186, 	throughput: 3909 samples/sec
+Number of waiting examples in queue: 257718
+Average loss at batch 20500: 0.001176, 	throughput: 3750 samples/sec
+Number of waiting examples in queue: 259317
+Saved after 43 epochs in: models/csharp/saved_model_iter43
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 43 epochs: [0.30943773 0.37255677 0.40663955 0.42899107 0.44465785]
+After 43 epochs: Precision: 0.409154206977426, recall: 0.31250291557429816, F1: 0.3543563240887187
+Average loss at batch 20600: 0.001161, 	throughput: 1798 samples/sec
+Number of waiting examples in queue: 276516
+Average loss at batch 20700: 0.001162, 	throughput: 4547 samples/sec
+Number of waiting examples in queue: 257316
+Average loss at batch 20800: 0.001164, 	throughput: 3820 samples/sec
+Number of waiting examples in queue: 258916
+Average loss at batch 20900: 0.001151, 	throughput: 3905 samples/sec
+Number of waiting examples in queue: 256744
+Average loss at batch 21000: 0.001143, 	throughput: 3874 samples/sec
+Number of waiting examples in queue: 258343
+Saved after 44 epochs in: models/csharp/saved_model_iter44
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:32S
+Accuracy after 44 epochs: [0.3126577  0.377302   0.41136595 0.4341694  0.44930893]
+After 44 epochs: Precision: 0.40712989277099804, recall: 0.3180669054815478, F1: 0.35712939007656774
+Average loss at batch 21100: 0.001141, 	throughput: 1777 samples/sec
+Number of waiting examples in queue: 265142
+Average loss at batch 21200: 0.001142, 	throughput: 3864 samples/sec
+Number of waiting examples in queue: 256342
+Average loss at batch 21300: 0.001129, 	throughput: 3804 samples/sec
+Number of waiting examples in queue: 259370
+Average loss at batch 21400: 0.001113, 	throughput: 3856 samples/sec
+Number of waiting examples in queue: 255770
+Average loss at batch 21500: 0.001121, 	throughput: 3798 samples/sec
+Number of waiting examples in queue: 257369
+Saved after 45 epochs in: models/csharp/saved_model_iter45
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 45 epochs: [0.31681919 0.38359131 0.41729748 0.43979965 0.45554175]
+After 45 epochs: Precision: 0.4163573016159068, recall: 0.32330002891979887, F1: 0.36397483563341526
+Average loss at batch 21600: 0.001113, 	throughput: 1959 samples/sec
+Number of waiting examples in queue: 258968
+Average loss at batch 21700: 0.001114, 	throughput: 3773 samples/sec
+Number of waiting examples in queue: 255368
+Average loss at batch 21800: 0.001112, 	throughput: 3841 samples/sec
+Number of waiting examples in queue: 258396
+Average loss at batch 21900: 0.001091, 	throughput: 3871 samples/sec
+Number of waiting examples in queue: 259996
+Saved after 46 epochs in: models/csharp/saved_model_iter46
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 46 epochs: [0.31294016 0.37771627 0.41260874 0.43399992 0.45079652]
+After 46 epochs: Precision: 0.4053322063357897, recall: 0.3175628410203796, F1: 0.3561193218069807
+Average loss at batch 22000: 0.001087, 	throughput: 1671 samples/sec
+Number of waiting examples in queue: 297994
+Average loss at batch 22100: 0.001083, 	throughput: 5649 samples/sec
+Number of waiting examples in queue: 257994
+Average loss at batch 22200: 0.001085, 	throughput: 3829 samples/sec
+Number of waiting examples in queue: 259594
+Average loss at batch 22300: 0.001073, 	throughput: 3813 samples/sec
+Number of waiting examples in queue: 257422
+Average loss at batch 22400: 0.001059, 	throughput: 3696 samples/sec
+Number of waiting examples in queue: 259022
+Saved after 47 epochs in: models/csharp/saved_model_iter47
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:29S
+Accuracy after 47 epochs: [0.31776071 0.38251798 0.41663842 0.43953602 0.45637028]
+After 47 epochs: Precision: 0.41486399913783295, recall: 0.32318412693970644, F1: 0.3633298551210995
+Average loss at batch 22500: 0.001061, 	throughput: 1738 samples/sec
+Number of waiting examples in queue: 281420
+Average loss at batch 22600: 0.001066, 	throughput: 4726 samples/sec
+Number of waiting examples in queue: 257020
+Average loss at batch 22700: 0.001054, 	throughput: 3766 samples/sec
+Number of waiting examples in queue: 258620
+Average loss at batch 22800: 0.001043, 	throughput: 3774 samples/sec
+Number of waiting examples in queue: 256448
+Average loss at batch 22900: 0.001043, 	throughput: 3934 samples/sec
+Number of waiting examples in queue: 258047
+Saved after 48 epochs in: models/csharp/saved_model_iter48
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:26S
+Accuracy after 48 epochs: [0.32120664 0.38673596 0.42155312 0.44467668 0.46160509]
+After 48 epochs: Precision: 0.42111019471438305, recall: 0.3286258634118585, F1: 0.3691637872544422
+Average loss at batch 23000: 0.001038, 	throughput: 1927 samples/sec
+Number of waiting examples in queue: 270046
+Average loss at batch 23100: 0.001042, 	throughput: 4327 samples/sec
+Number of waiting examples in queue: 256046
+Average loss at batch 23200: 0.001025, 	throughput: 3864 samples/sec
+Number of waiting examples in queue: 257646
+Average loss at batch 23300: 0.001024, 	throughput: 3887 samples/sec
+Number of waiting examples in queue: 255474
+Average loss at batch 23400: 0.001008, 	throughput: 3828 samples/sec
+Number of waiting examples in queue: 257073
+Saved after 49 epochs in: models/csharp/saved_model_iter49
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:28S
+Accuracy after 49 epochs: [0.3323165  0.40070802 0.43693745 0.46028697 0.47736602]
+After 49 epochs: Precision: 0.4271764287504882, recall: 0.3417375568987389, F1: 0.37971016745822617
+Average loss at batch 23500: 0.001009, 	throughput: 1933 samples/sec
+Number of waiting examples in queue: 258672
+Average loss at batch 23600: 0.001022, 	throughput: 4167 samples/sec
+Number of waiting examples in queue: 255072
+Average loss at batch 23700: 0.001000, 	throughput: 4116 samples/sec
+Number of waiting examples in queue: 242500
+Average loss at batch 23800: 0.001018, 	throughput: 13012 samples/sec
+Number of waiting examples in queue: 140100
+Average loss at batch 23900: 0.001028, 	throughput: 12900 samples/sec
+Number of waiting examples in queue: 37700
+Saved after 50 epochs in: models/csharp/saved_model_iter50
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:22S
+Accuracy after 50 epochs: [0.32992506 0.39616992 0.4306858  0.45343276 0.47102022]
+After 50 epochs: Precision: 0.4306633474886513, recall: 0.3429241718981745, F1: 0.3818181346087435
+Done training
+Reader stopping
+Model saved in file: models/csharp/saved_model
+Training time: 2H:10M:16S
+

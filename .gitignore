@@ -5,3 +5,6 @@
 *.vscode
 *.raw.txt
 log.txt
+*.prefs
+JavaExtractor/
+.ipynb_checkpoints
