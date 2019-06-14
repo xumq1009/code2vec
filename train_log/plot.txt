@@ -1,0 +1,147 @@
+# bash train.sh 
+2019-06-09 19:13:23.327948: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-06-09 19:13:23.647779: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:964] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-06-09 19:13:23.648884: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1411] Found device 0 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:00:08.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2019-06-09 19:13:23.648914: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1490] Adding visible gpu devices: 0
+2019-06-09 19:13:43.166601: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-09 19:13:43.166669: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977]      0 
+2019-06-09 19:13:43.166681: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990] 0:   N 
+2019-06-09 19:13:43.167108: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1103] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15121 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:00:08.0, compute capability: 6.0)
+Dictionaries loaded.
+Loaded word vocab. size: 1087573
+Loaded target word vocab. size: 186705
+Loaded paths vocab. size: 451684
+Created model
+Starting training
+WARNING:tensorflow:From /home/ellie/anaconda3/envs/cv/lib/python3.6/site-packages/tensorflow/python/training/input.py:187: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+WARNING:tensorflow:From /home/ellie/anaconda3/envs/cv/lib/python3.6/site-packages/tensorflow/python/training/input.py:187: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+Initalized variables
+WARNING:tensorflow:From /home/ellie/code2vec/PathContextReader.py:59: start_queue_runners (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+Started reader...
+Average loss at batch 100: 0.011066, 	throughput: 877 samples/sec
+Number of waiting examples in queue: 256396
+Average loss at batch 200: 0.010350, 	throughput: 3819 samples/sec
+Number of waiting examples in queue: 257996
+Average loss at batch 300: 0.010113, 	throughput: 3699 samples/sec
+Number of waiting examples in queue: 258239
+Average loss at batch 400: 0.009885, 	throughput: 3769 samples/sec
+Number of waiting examples in queue: 259838
+Average loss at batch 500: 0.009688, 	throughput: 3791 samples/sec
+Number of waiting examples in queue: 256236
+Saved after 1 epochs in: models/csharp/saved_model_iter1
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:5S
+Accuracy after 1 epochs: [0.15982666 0.16008157 0.16339536 0.1646699  0.16619934]
+After 1 epochs: Precision: 0.14367562802996914, recall: 0.04272888131594469, F1: 0.065868565944335
+Average loss at batch 600: 0.009521, 	throughput: 2838 samples/sec
+Number of waiting examples in queue: 278635
+Average loss at batch 700: 0.009357, 	throughput: 4270 samples/sec
+Number of waiting examples in queue: 259435
+Average loss at batch 800: 0.009235, 	throughput: 3695 samples/sec
+Number of waiting examples in queue: 261034
+Average loss at batch 900: 0.009087, 	throughput: 3729 samples/sec
+Number of waiting examples in queue: 261277
+Average loss at batch 1000: 0.008882, 	throughput: 3793 samples/sec
+Number of waiting examples in queue: 257677
+Saved after 2 epochs in: models/csharp/saved_model_iter2
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:3S
+Accuracy after 2 epochs: [0.16008157 0.16339536 0.16390517 0.16416008 0.16416008]
+After 2 epochs: Precision: 0.14273069263111307, recall: 0.04227013565764467, F1: 0.06522398624734553
+Average loss at batch 1100: 0.008710, 	throughput: 2732 samples/sec
+Number of waiting examples in queue: 290474
+Average loss at batch 1200: 0.008541, 	throughput: 5292 samples/sec
+Number of waiting examples in queue: 255674
+Average loss at batch 1300: 0.008413, 	throughput: 3528 samples/sec
+Number of waiting examples in queue: 257274
+Average loss at batch 1400: 0.008263, 	throughput: 3650 samples/sec
+Number of waiting examples in queue: 257517
+Average loss at batch 1500: 0.008095, 	throughput: 3540 samples/sec
+Number of waiting examples in queue: 259116
+Average loss at batch 1600: 0.007926, 	throughput: 3705 samples/sec
+Number of waiting examples in queue: 260714
+Saved after 3 epochs in: models/csharp/saved_model_iter3
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:3S
+Accuracy after 3 epochs: [0.16059138 0.16135611 0.16186592 0.16263064 0.16416008]
+After 3 epochs: Precision: 0.13645876935956466, recall: 0.04272888131594469, F1: 0.06507960273494036
+Average loss at batch 1700: 0.007769, 	throughput: 3211 samples/sec
+Number of waiting examples in queue: 267513
+Average loss at batch 1800: 0.007650, 	throughput: 4023 samples/sec
+Number of waiting examples in queue: 258713
+Average loss at batch 1900: 0.007515, 	throughput: 3638 samples/sec
+Number of waiting examples in queue: 255112
+Average loss at batch 2000: 0.007368, 	throughput: 3688 samples/sec
+Number of waiting examples in queue: 255355
+Average loss at batch 2100: 0.007220, 	throughput: 3595 samples/sec
+Number of waiting examples in queue: 256955
+Saved after 4 epochs in: models/csharp/saved_model_iter4
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:3S
+Accuracy after 4 epochs: [0.16084629 0.16237573 0.16390517 0.16645424 0.16670915]
+After 4 epochs: Precision: 0.1306, recall: 0.042794416409987546, F1: 0.0644651759711733
+Average loss at batch 2200: 0.007092, 	throughput: 2746 samples/sec
+Number of waiting examples in queue: 284552
+Average loss at batch 2300: 0.006939, 	throughput: 4771 samples/sec
+Number of waiting examples in queue: 260152
+Average loss at batch 2400: 0.006831, 	throughput: 3866 samples/sec
+Number of waiting examples in queue: 256552
+Average loss at batch 2500: 0.006725, 	throughput: 3479 samples/sec
+Number of waiting examples in queue: 261995
+Average loss at batch 2600: 0.006589, 	throughput: 3684 samples/sec
+Number of waiting examples in queue: 258394
+Average loss at batch 2700: 0.006456, 	throughput: 3711 samples/sec
+Number of waiting examples in queue: 259992
+Saved after 5 epochs in: models/csharp/saved_model_iter5
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:3S
+Accuracy after 5 epochs: [0.16543462 0.1684935  0.17002294 0.1723171  0.17665052]
+After 5 epochs: Precision: 0.17255050028317917, recall: 0.06004861704224427, F1: 0.08909250414270398
+Average loss at batch 2800: 0.006368, 	throughput: 3308 samples/sec
+Number of waiting examples in queue: 261591
+Average loss at batch 2900: 0.006268, 	throughput: 3744 samples/sec
+Number of waiting examples in queue: 257991
+Average loss at batch 3000: 0.006154, 	throughput: 3715 samples/sec
+Number of waiting examples in queue: 259590
+Average loss at batch 3100: 0.006043, 	throughput: 3655 samples/sec
+Number of waiting examples in queue: 259833
+Average loss at batch 3200: 0.005956, 	throughput: 3722 samples/sec
+Number of waiting examples in queue: 256232
+Saved after 6 epochs in: models/csharp/saved_model_iter6
+Loading test data from: data/csharp/csharp.val.c2v
+Done loading test data
+Done testing, epoch reached
+Evaluation time: 0H:0M:4S
+Accuracy after 6 epochs: [0.16696406 0.16823859 0.17486617 0.17690543 0.19067041]
+After 6 epochs: Precision: 0.18528610354223432, recall: 0.06702589039295571, F1: 0.09844134536505332
+Average loss at batch 3300: 0.005839, 	throughput: 2768 samples/sec
+Number of waiting examples in queue: 283830
+Average loss at batch 3400: 0.005756, 	throughput: 4639 samples/sec
+Number of waiting examples in queue: 259430
+Average loss at batch 3500: 0.005683, 	throughput: 3697 samples/sec
+Number of waiting examples in queue: 255830
+Average loss at batch 3600: 0.005565, 	throughput: 3631 samples/sec
+Number of waiting examples in queue: 256073
+Average loss at batch 3700: 0.005483, 	throughput: 3606 samples/sec
+Number of waiting examples in queue: 257672
+Average loss at batch 3800: 0.005433, 	throughput: 3546 samples/sec
+Number of waiting examples in queue: 259270
